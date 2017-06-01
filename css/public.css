@@ -1,0 +1,30 @@
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, fieldset, legend, iframe, td, th, table, form, input, div {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+table {
+  border-collapse: collapse; }
+
+img {
+  vertical-align: middle; }
+
+.valign:after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 100px;
+  vertical-align: middle; }
+
+.clear {
+  zoom: 1; }
+
+.clear:after {
+  display: block;
+  content: "";
+  clear: both; }

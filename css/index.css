@@ -1,0 +1,134 @@
+header {
+  height: 100px;
+  background-color: #000; }
+  header #logo {
+    display: block;
+    background: url(../images/sprites_header_footer.png) no-repeat 0 0;
+    width: 132px;
+    height: 19px;
+    float: left;
+    margin: 38px 0 0 26px; }
+  header #header_r {
+    float: right;
+    margin-top: 32px;
+    height: 30px; }
+    header #header_r a {
+      display: block;
+      float: left;
+      height: 30px;
+      font: 12px/30px "";
+      color: #fff; }
+    header #header_r .special {
+      margin-left: 42px;
+      width: 30px;
+      height: 30px; }
+    header #header_r a:first-child {
+      margin-right: 27px; }
+      header #header_r a:first-child #login_l {
+        float: left;
+        margin-right: 10px; }
+        header #header_r a:first-child #login_l span:hover {
+          border-bottom: 1px solid #fff; }
+        header #header_r a:first-child #login_l span:nth-of-type(2) {
+          margin: 0 10px; }
+      header #header_r a:first-child #login_r {
+        float: left;
+        width: 30px;
+        height: 30px;
+        background: url(../images/sprites_header_footer.png) no-repeat -95px -85px; }
+    header #header_r a:first-child:hover #login_r {
+      background: url(../images/sprites_header_footer.png) no-repeat -136px -66px; }
+    header #header_r a:nth-of-type(2) #shopping_l {
+      float: left; }
+    header #header_r a:nth-of-type(2) #shopping_r {
+      float: left;
+      width: 30px;
+      height: 30px;
+      margin-left: 10px;
+      background: url(../images/sprites_header_footer.png) no-repeat -64px -54px; }
+    header #header_r a:nth-of-type(2):hover span {
+      border-bottom: 1px solid #fff; }
+    header #header_r a:nth-of-type(2):hover #shopping_r {
+      background: url(../images/sprites_header_footer.png) no-repeat -167px -33px; }
+    header #header_r a:nth-of-type(3) {
+      background: url(../images/sprites_header_footer.png) no-repeat -96px -54px; }
+    header #header_r a:nth-of-type(3):hover {
+      background: url(../images/sprites_header_footer.png) no-repeat -136px -33px; }
+    header #header_r a:nth-of-type(4) {
+      background: url(../images/sprites_header_footer.png) no-repeat -136px -162px; }
+    header #header_r a:nth-of-type(4):hover {
+      background: url(../images/sprites_header_footer.png) no-repeat -135px -1px; }
+    header #header_r a:nth-of-type(5) {
+      margin-right: 26px;
+      background: url(../images/sprites_header_footer.png) no-repeat -168px -162px; }
+    header #header_r a:nth-of-type(5):hover {
+      background: url(../images/sprites_header_footer.png) no-repeat -167px -1px; }
+
+nav {
+  background: #464646;
+  height: 65px;
+  position: relative; }
+  nav ul {
+    margin-left: 354px;
+    width: 692px;
+    height: 65px; }
+    nav ul li {
+      float: left;
+      margin-right: 122px; }
+      nav ul li a {
+        display: block;
+        height: 48px;
+        float: left;
+        font: 22px/40px "";
+        color: #fff;
+        background: url(../images/t1.png) no-repeat center bottom; }
+    nav ul .nav_te {
+      margin-right: 98px; }
+
+nav #nav2_1, nav #nav2_2, nav #nav2_3 {
+  display: none;
+  position: absolute;
+  height: 327px;
+  top: 65px;
+  background: #fff;
+  width: 100%; }
+  nav #nav2_1 a, nav #nav2_2 a, nav #nav2_3 a {
+    display: block;
+    float: left;
+    font-size: 18px;
+    color: #000;
+    margin-right: 44px; }
+    nav #nav2_1 a img, nav #nav2_2 a img, nav #nav2_3 a img {
+      display: block; }
+    nav #nav2_1 a p, nav #nav2_2 a p, nav #nav2_3 a p {
+      text-align: center; }
+  nav #nav2_1 a:hover span, nav #nav2_2 a:hover span, nav #nav2_3 a:hover span {
+    border-bottom: 1px solid #000; }
+  nav #nav2_1 .nav2_divide1, nav #nav2_2 .nav2_divide1, nav #nav2_3 .nav2_divide1 {
+    height: 162px;
+    border-bottom: 1px solid #b7b7b7;
+    padding-left: 126px;
+    box-sizing: border-box; }
+  nav #nav2_1 .nav2_divide2, nav #nav2_2 .nav2_divide2, nav #nav2_3 .nav2_divide2 {
+    height: 164px;
+    padding-left: 126px;
+    box-sizing: border-box; }
+
+nav #nav2_3 #nav2_3_t {
+  padding-left: 292px; }
+
+nav #nav2_3 #nav2_3_b {
+  padding-left: 292px; }
+
+#legal_mes {
+  height: 42px;
+  padding-top: 16px; }
+  #legal_mes a {
+    display: block;
+    color: #222222;
+    font: 10px/12px "";
+    text-align: center; }
+
+#banner {
+  height: 539px;
+  position: relative; }
