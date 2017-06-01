@@ -64,26 +64,39 @@ slideshowObj.prototype.init=function(){
     	font:"18px/33px ''"});
     }
     $("#banner #btn li:first").css({color:"#000",borderTop:"1px solid #000"});
+    $("<div id='btnLeft' class='valign'></div>").appendTo("#banner");
+    $("<div id='btnRight' class='valign'></div>").appendTo("#banner");
+    $("#btnLeft").css({position:"absolute",zIndex:100,width:"50px",height:"126px",background:"#321400",top:"185px",textAlign:"center"});
+    $("#btnRight").css({position:"absolute",zIndex:100,width:"50px",height:"126px",background:"#321400",top:"185px",right:0,textAlign:"center"});
+    $("<div class='btnLeftInner'></div>").appendTo("#btnLeft");
+    $("<div class='btnRightInner'></div>").appendTo("#btnRight");
+    $(".btnLeftInner").css({width:"21px",height:"37px",background:"url(images/homeslide_arrow.png) no-repeat 0px -48px",verticalAlign:"middle",display:"inline-block"});
+    $(".btnRightInner").css({width:"21px",height:"37px",background:"url(images/homeslide_arrow.png) no-repeat 0px 0px",verticalAlign:"middle",display:"inline-block"});
     var that=this;
-    $("#banner img").mouseenter(function(){
+    $("#banner").mouseover(function(){
     	that.stopChange();
     });
-    $("#banner img").mouseleave(function(){
+    $("#banner").mouseout(function(){
     	that.setGo();
     });
-    $("#banner ul").delegate("li","mouseenter",function(){
+    $("#banner ul").delegate("li","mouseover",function(){
     	that.btnOver(this.value);
-    	that.stopChange();
     	if(that.currentInOrd==that.currentOutOrd){
     		return;
     	}
     	that.fadeInOut();
-		that.changeBtn();
-		
+		that.changeBtn();	
     });
-     $("#banner ul").delegate("li","mouseleave",function(){
-     	that.setGo();
-     	});
+    $("#btnLeft").click(function(){
+    	that.btnLeft();
+    	that.fadeInOut();
+		that.changeBtn();	
+    })
+    $("#btnRight").click(function(){
+    	that.btnRight();
+    	that.fadeInOut();
+		that.changeBtn();	
+    })
     this.setGo();
 };
 //图片切换定时器
@@ -118,7 +131,6 @@ slideshowObj.prototype.changeBtn=function(){
 };
 //鼠标悬停停止动画
 slideshowObj.prototype.stopChange=function(){
-	console.log(this.timer);
 	clearInterval(this.timer);
 };
 //鼠标移入按钮切换
@@ -126,8 +138,35 @@ slideshowObj.prototype.btnOver=function(ord){
 	this.currentOutOrd=this.currentInOrd;
 	this.currentInOrd=ord;
 }
+//鼠标左按钮点击切换
+slideshowObj.prototype.btnLeft=function(){
+	this.currentOutOrd=this.currentInOrd;
+	this.currentInOrd=this.currentInOrd-1;
+	if(this.currentInOrd==0){
+		this.currentInOrd=this.amount;
+	}
+}
+//鼠标右按钮点击切换
+slideshowObj.prototype.btnRight=function(){
+	this.currentOutOrd=this.currentInOrd;
+	this.currentInOrd=this.currentInOrd+1;
+	if(this.currentInOrd==7){
+		this.currentInOrd=1;
+	}
+}
+//热卖选项卡
+var hotSale=document.getElementById("hotSale");
+hotSale.children[2].style.cssText="position:absolute;left:80px;top:498px;transition:1s";
+$("#hot_menu").delegate("li","mouseover",function(){
+	for(var i=0;i<4;i++){
+		hotSale.children[1].children[i].className="";
+		hotSale.children[1].children[i].ord=i;
+	}
+	this.className="active";
+	hotSale.children[2].style.left=(this.ord)*310+80+"px";
+})
 $(function(){
-	new slideshowObj(6,1,0,"#000","#b29999",3000,3000);
+	new slideshowObj(6,1,0,"#000","#b29999",60000,2000);
 });
 
 
